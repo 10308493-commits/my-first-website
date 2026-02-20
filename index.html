@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopLuxe - Premium Wholesale Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="Index1.html" class="nav-logo">Shop<span>Luxe</span></a>
+
+      <ul class="nav-menu">
+        <li><a href="Index1.html" class="nav-link">Home</a></li>
+        <li><a href="Shop.html" class="nav-link">Shop</a></li>
+        <li><a href="Sell product .html" class="nav-link">Sell products</a></li>
+        <li><a href="New Arrival page .html" class="nav-link">New Arrivals</a></li>
+
+        <li><a href="Contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <!-- Search Bar -->
+        <div class="nav-search-container" id="navSearchContainer">
+          <input type="text" class="nav-search-input" placeholder="Search products..." id="navSearchInput">
+          <button class="nav-search-btn" id="navSearchBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </div>
+
+        <button class="icon-btn" id="searchToggle" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Account Dropdown -->
+        <div class="account-dropdown">
+          <button class="icon-btn" id="accountBtn" aria-label="User Account">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+          <div class="account-menu" id="accountMenu">
+            <a href="#" class="account-link" id="signInLink">Sign In</a>
+            <div class="account-divider"></div>
+            <a href="#" class="account-link" id="createAccountLink">Create Account</a>
+            <a href="#" class="account-link">My Orders</a>
+            <a href="#" class="account-link">Wishlist</a>
+            <div class="account-divider"></div>
+            <a href="Settings.html" class="account-link">Settings</a>
+            <a href="Help.html" class="account-link">Help & Support</a>
+          </div>
+        </div>
+
+        <div class="cart-icon">
+          <button class="icon-btn" aria-label="Cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+          </button>
+          <span class="cart-badge">3</span>
+        </div>
+        <button class="hamburger" aria-label="Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Account Creation Modal -->
+  <div class="modal" id="accountModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Create Account</h2>
+        <p class="modal-subtitle" id="modalSubtitle">Join ShopLuxe for exclusive deals and personalized shopping</p>
+      </div>
+
+      <div class="success-message" id="successMessage">
+        Account created successfully! Welcome to ShopLuxe.
+      </div>
+
+      <form id="accountForm">
+        <div class="form-row" id="nameRow">
+          <div class="form-group">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" id="firstName" name="firstName" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" id="lastName" name="lastName" class="form-input" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" name="email" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" name="password" class="form-input" required minlength="8">
+        </div>
+        <div class="form-group" id="confirmPasswordGroup">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required minlength="8">
+        </div>
+        <div class="checkbox-group" id="newsletterGroup">
+          <input type="checkbox" id="newsletter" name="newsletter">
+          <label for="newsletter">Subscribe to our newsletter for exclusive deals</label>
+        </div>
+        <div class="checkbox-group" id="termsGroup">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I agree to the <a href="#" style="color: var(--accent-color);">Terms &
+              Conditions</a></label>
+        </div>
+        <button type="submit" class="modal-btn modal-btn-primary" id="submitBtn">Create Account</button>
+        <button type="button" class="modal-btn modal-btn-secondary" id="switchToSignIn">Already have an account? Sign
+          In</button>
+      </form>
+      <div class="modal-footer">
+        <p>By creating an account, you agree to our <a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Africa's Leading Wholesale Marketplace</h1>
+      <p>Discover verified suppliers across Africa, source bulk products at competitive prices, and connect directly
+        with manufacturers and exporters. From Ghana to the continent and beyond — reliable trade starts here.</p>
+
+      <form class="search-container" action="#" method="GET">
+        <select class="category-select" name="category">
+          <option value="all">All Products</option>
+          <option value="suppliers">Suppliers</option>
+          <option value="manufacturers">Manufacturers</option>
+          <option value="raw-materials">Raw Materials</option>
+          <option value="agriculture">Agriculture</option>
+          <option value="electronics">Electronics</option>
+          <option value="textiles">Textiles & Fashion</option>
+          <option value="machinery">Machinery</option>
+        </select>
+        <input type="text" class="search-input" name="q"
+          placeholder="Search for products, suppliers, or categories in Africa (e.g., cocoa, textiles, machinery)"
+          required>
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+
+      <div class="cta-buttons">
+        <button class="btn-primary">Start Sourcing Now</button>
+        <button class="btn-secondary">Find Verified Suppliers</button>
+      </div>
+    </div>
+  </section>
+
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&q=80"
+          alt="About ShopLuxe">
+        <div class="about-badge">
+          <span>10+</span>
+          <p>Years of Excellence</p>
+        </div>
+      </div>
+      <div class="about-content">
+        <h4 class="section-subtitle">Our Story</h4>
+        <h2 class="section-title">Bridging Africa to the World</h2>
+        <p>ShopLuxe was born from a vision to empower African businesses and connect them with global markets. We are
+          more than just a marketplace; we are a bridge for trade, innovation, and growth.</p>
+        <p>We verify every supplier to ensure quality and reliability, making sourcing from Africa seamless, secure, and
+          efficient for businesses worldwide.</p>
+        <ul class="about-features">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="check-icon">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Verified Suppliers
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="check-icon">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Quality Assurance
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="check-icon">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Secure Payments
+          </li>
+        </ul>
+        <a href="Shop.html" class="btn btn-primary">Discover More</a>
+      </div>
+    </div>
+  </section>
+
+  </section>
+
+  <!-- Services Section -->
+  <section class="about-section" style="background-color: var(--bg-color);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h4 class="section-subtitle">Why Choose Us</h4>
+        <h2 class="section-title">The ShopLuxe Advantage</h2>
+      </div>
+      <div class="about-grid">
+        <!-- Service 1 -->
+        <div class="card-section" style="margin-bottom: 0; text-align: center;">
+          <div
+            style="color: var(--id-accent-color); margin-bottom: 1rem; display: inline-flex; padding: 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 50%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              style="color: var(--accent-color);">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--primary-color);">Global Reach</h3>
+          <p style="color: var(--text-light);">Connecting African suppliers with buyers across the globe seamlessly.</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="card-section" style="margin-bottom: 0; text-align: center;">
+          <div
+            style="color: var(--accent-color); margin-bottom: 1rem; display: inline-flex; padding: 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 50%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              style="color: var(--accent-color);">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--primary-color);">Secure Payments</h3>
+          <p style="color: var(--text-light);">Your transactions are protected with industry-leading security standards.
+          </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="card-section" style="margin-bottom: 0; text-align: center;">
+          <div
+            style="color: var(--accent-color); margin-bottom: 1rem; display: inline-flex; padding: 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 50%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              style="color: var(--accent-color);">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+              </path>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--primary-color);">24/7 Support</h3>
+          <p style="color: var(--text-light);">Our dedicated team is here to assist you around the clock.</p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="card-section" style="margin-bottom: 0; text-align: center;">
+          <div
+            style="color: var(--accent-color); margin-bottom: 1rem; display: inline-flex; padding: 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 50%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              style="color: var(--accent-color);">
+              <polyline points="9 11 12 14 22 4"></polyline>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--primary-color);">Quality Verified</h3>
+          <p style="color: var(--text-light);">We verify every supplier to ensure the highest quality products.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>ShopLuxe</h3>
+        <p>Your premier destination for fashion and lifestyle products. Discover quality, style, and exceptional
+          service.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Shop.html">Shop</a></li>
+          <li><a href="Sell product .html">Sell Products</a></li>
+          <li><a href="New Arrival page .html">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Customer Service</h3>
+        <ul>
+          <li><a href="Contact.html">Contact Us</a></li>
+          <li><a href="Help.html">FAQs</a></li>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Stay Connected</h3>
+        <p>Subscribe to our newsletter for the latest updates.</p>
+        <form action="#">
+          <input type="email" placeholder="Enter your email" required class="footer-input">
+          <button type="submit" class="footer-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ShopLuxe. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Image Slider Logic
+    const heroSection = document.querySelector('.hero');
+
+    // Array of high-quality Unsplash images appropriate for African trade/business
+    const images = [
+      'https://tse4.mm.bing.net/th/id/OIP.yQiUXh9vFuRdq4wlvLh7FgHaFX?rs=1&pid=ImgDetMain&o=7&rm=3', // Shipping/Trade
+      'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&q=80', // Agriculture/Nature
+      'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&auto=format&fit=crop&q=80', // Logistics/Container
+      'https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-4.0.3&auto=format&fit=crop&q=80'  // Market/People
+    ];
+
+    let currentIndex = 0;
+    const intervalTime = 5000; // Change image every 5 seconds
+
+    function changeBackgroundImage() {
+      // Preload next image to prevent flicker
+      const nextIndex = (currentIndex + 1) % images.length;
+      const img = new Image();
+      img.src = images[nextIndex];
+
+      img.onload = () => {
+        currentIndex = nextIndex;
+        heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('${images[currentIndex]}')`;
+      };
+    }
+
+    // Start the slider
+    setInterval(changeBackgroundImage, intervalTime);
+
+    // Navigation and Menu Logic
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }));
+
+    // Search Toggle Logic
+    const searchToggle = document.getElementById('searchToggle');
+    const navSearchContainer = document.getElementById('navSearchContainer'); // Renamed
+    const navSearchInput = document.getElementById('navSearchInput'); // Renamed
+    const navSearchBtn = document.getElementById('navSearchBtn'); // Renamed
+
+    // Toggle search bar
+    searchToggle.addEventListener('click', () => {
+      navSearchContainer.classList.toggle('active');
+      if (navSearchContainer.classList.contains('active')) {
+        navSearchInput.focus();
+      }
+    });
+
+    // Simple search alert for navbar search
+    navSearchBtn.addEventListener('click', () => {
+      const query = navSearchInput.value.trim();
+      if (query) {
+        alert(`Navbar searching for: ${query}`);
+        navSearchInput.value = '';
+        navSearchContainer.classList.remove('active');
+      }
+    });
+
+    // Account Dropdown Logic
+    const accountBtn = document.getElementById('accountBtn');
+    const accountMenu = document.getElementById('accountMenu');
+
+    accountBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      accountMenu.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!accountBtn.contains(e.target) && !accountMenu.contains(e.target)) {
+        accountMenu.classList.remove('active');
+      }
+    });
+
+    // Account Modal Functionality
+    const accountModal = document.getElementById('accountModal');
+    const modalClose = document.getElementById('modalClose');
+    const accountForm = document.getElementById('accountForm');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const submitBtn = document.getElementById('submitBtn');
+    const switchToSignIn = document.getElementById('switchToSignIn');
+    const successMessage = document.getElementById('successMessage');
+
+    let isSignInMode = false;
+
+    // Open modal for account creation
+    document.getElementById('createAccountLink').addEventListener('click', (e) => {
+      e.preventDefault();
+      isSignInMode = false;
+      showCreateAccountModal();
+      accountMenu.classList.remove('active'); // Close dropdown
+    });
+
+    // Open modal for sign in
+    document.getElementById('signInLink').addEventListener('click', (e) => {
+      e.preventDefault();
+      isSignInMode = true;
+      showSignInModal();
+      accountMenu.classList.remove('active'); // Close dropdown
+    });
+
+    function showCreateAccountModal() {
+      modalTitle.textContent = 'Create Account';
+      modalSubtitle.textContent = 'Join ShopLuxe for exclusive deals and personalized shopping';
+      submitBtn.textContent = 'Create Account';
+      switchToSignIn.textContent = 'Already have an account? Sign In';
+      accountModal.classList.add('active');
+      successMessage.style.display = 'none';
+
+      // Show all form fields for account creation
+      document.getElementById('nameRow').style.display = 'grid';
+      document.getElementById('confirmPasswordGroup').style.display = 'block';
+      document.getElementById('newsletterGroup').style.display = 'flex';
+      document.getElementById('termsGroup').style.display = 'flex';
+    }
+
+    function showSignInModal() {
+      modalTitle.textContent = 'Sign In';
+      modalSubtitle.textContent = 'Welcome back! Please sign in to your account';
+      submitBtn.textContent = 'Sign In';
+      switchToSignIn.textContent = 'Don\'t have an account? Create Account';
+      accountModal.classList.add('active');
+      successMessage.style.display = 'none';
+
+      // Hide unnecessary fields for sign in
+      document.getElementById('nameRow').style.display = 'none';
+      document.getElementById('confirmPasswordGroup').style.display = 'none';
+      document.getElementById('newsletterGroup').style.display = 'none';
+      document.getElementById('termsGroup').style.display = 'none';
+    }
+
+    // Switch between sign in and create account
+    switchToSignIn.addEventListener('click', () => {
+      isSignInMode = !isSignInMode;
+      if (isSignInMode) {
+        showSignInModal();
+      } else {
+        showCreateAccountModal();
+      }
+    });
+
+    // Close modal
+    modalClose.addEventListener('click', () => {
+      accountModal.classList.remove('active');
+      accountForm.reset();
+    });
+
+    // Close modal when clicking outside
+    accountModal.addEventListener('click', (e) => {
+      if (e.target === accountModal) {
+        accountModal.classList.remove('active');
+        accountForm.reset();
+      }
+    });
+
+    // Form submission (Mock Auth)
+    accountForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(accountForm);
+      const data = Object.fromEntries(formData);
+
+      // Basic validation
+      if (!isSignInMode) {
+        // Account creation validation
+        if (data.password !== data.confirmPassword) {
+          alert('Passwords do not match!');
+          return;
+        }
+
+        if (data.password.length < 8) {
+          alert('Password must be at least 8 characters long!');
+          return;
+        }
+
+        if (!data.terms) {
+          alert('Please agree to the Terms & Conditions!');
+          return;
+        }
+
+        // Simulate account creation
+        successMessage.textContent = `Account created successfully! Welcome ${data.firstName}!`;
+        successMessage.style.display = 'block';
+        submitBtn.textContent = 'Account Created!';
+        submitBtn.style.background = '#10b981';
+
+        // Store user in localStorage
+        localStorage.setItem('shopLuxeUser', JSON.stringify({ name: data.firstName, email: data.email }));
+        updateAuthUI();
+
+        // Reset form after 2 seconds
+        setTimeout(() => {
+          accountModal.classList.remove('active');
+          accountForm.reset();
+          submitBtn.textContent = 'Create Account';
+          submitBtn.style.background = '';
+        }, 2000);
+
+      } else {
+        // Sign in validation
+        if (!data.email || !data.password) {
+          alert('Please fill in all fields!');
+          return;
+        }
+
+        // Simulate sign in
+        successMessage.textContent = 'Sign in successful! Welcome back!';
+        successMessage.style.display = 'block';
+        submitBtn.textContent = 'Signed In!';
+        submitBtn.style.background = '#10b981';
+
+        // Store user in localStorage (Mock)
+        localStorage.setItem('shopLuxeUser', JSON.stringify({ name: 'User', email: data.email }));
+        updateAuthUI();
+
+        // Reset form after 2 seconds
+        setTimeout(() => {
+          accountModal.classList.remove('active');
+          accountForm.reset();
+          submitBtn.textContent = 'Sign In';
+          submitBtn.style.background = '';
+        }, 2000);
+      }
+    });
+
+    // Check Auth State on Load
+    function updateAuthUI() {
+      const user = JSON.parse(localStorage.getItem('shopLuxeUser'));
+      const signInLink = document.getElementById('signInLink');
+      const createAccountLink = document.getElementById('createAccountLink');
+
+      if (user) {
+        // User is logged in
+        signInLink.textContent = `Hi, ${user.name}`;
+        signInLink.href = 'Settings.html'; // Redirect to Profile/Settings
+        signInLink.id = 'userProfileLink'; // Change ID to prevent opening modal
+
+        createAccountLink.textContent = 'Sign Out';
+        createAccountLink.href = '#';
+        createAccountLink.id = 'signOutLink';
+
+        // Add Sign Out Logic
+        document.getElementById('signOutLink').addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('shopLuxeUser');
+          window.location.reload();
+        });
+
+        // Remove modal listeners for these modified links if necessary, 
+        // but changing IDs effectively does that for new event listeners.
+      }
+    }
+
+    // Call on load
+    updateAuthUI();
+  </script>
+</body>
+
+</html>

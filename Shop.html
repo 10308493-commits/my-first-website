@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - ShopLuxe</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="Index.html" class="nav-logo">Shop<span>Luxe</span></a>
+
+            <ul class="nav-menu">
+                <li><a href="Index.html" class="nav-link">Home</a></li>
+                <li><a href="Shop.html" class="nav-link">Shop</a></li>
+                <li><a href="Sell product .html" class="nav-link">Sell products</a></li>
+                <li><a href="New Arrival page .html" class="nav-link">New Arrivals</a></li>
+                <li><a href="Check out.html" class="nav-link">Checkout</a></li>
+                <li><a href="Contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <button class="icon-btn" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="User Account">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+                <a href="Checkout.html" class="cart-icon">
+                    <button class="icon-btn" aria-label="Cart">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                    </button>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </a>
+                <button class="hamburger" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Layout -->
+    <div class="shop-layout">
+        <!-- Mobile Sidebar Toggle -->
+        <button class="sidebar-toggle" onclick="toggleSidebar()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="4" y1="21" x2="4" y2="14"></line>
+                <line x1="4" y1="10" x2="4" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="3"></line>
+                <line x1="20" y1="21" x2="20" y2="16"></line>
+                <line x1="20" y1="12" x2="20" y2="3"></line>
+            </svg>
+            Filter & Sort
+        </button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Categories -->
+            <div class="filter-card">
+                <h3 class="filter-title">Category</h3>
+                <div class="category-list">
+                    <div class="category-item active">
+                        <span>All Products</span>
+                        <span class="category-count">156</span>
+                    </div>
+                    <div class="category-item">
+                        <span>Electronics</span>
+                        <span class="category-count">42</span>
+                    </div>
+                    <div class="category-item">
+                        <span>Fashion</span>
+                        <span class="category-count">38</span>
+                    </div>
+                    <div class="category-item">
+                        <span>Home & Living</span>
+                        <span class="category-count">29</span>
+                    </div>
+                    <div class="category-item">
+                        <span>Beauty & Health</span>
+                        <span class="category-count">24</span>
+                    </div>
+                    <div class="category-item">
+                        <span>Sports & Fitness</span>
+                        <span class="category-count">23</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Range -->
+            <div class="filter-card">
+                <h3 class="filter-title">Price Range</h3>
+                <div class="price-inputs">
+                    <input type="text" class="price-input" placeholder="Min" value="$0" aria-label="Minimum price">
+                    <span>—</span>
+                    <input type="text" class="price-input" placeholder="Max" value="$500" aria-label="Maximum price">
+                </div>
+                <input type="range" class="price-range-slider" min="0" max="500" value="500" aria-label="Price range">
+                <button class="apply-btn">Apply Filter</button>
+            </div>
+
+            <!-- Brands -->
+            <div class="filter-card">
+                <h3 class="filter-title">Brands</h3>
+                <div class="filter-option">
+                    <input type="checkbox" id="brand1" checked>
+                    <label for="brand1">Apple</label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="brand2">
+                    <label for="brand2">Samsung</label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="brand3">
+                    <label for="brand3">Nike</label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="brand4">
+                    <label for="brand4">Adidas</label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="brand5">
+                    <label for="brand5">Sony</label>
+                </div>
+            </div>
+
+            <!-- Ratings -->
+            <div class="filter-card">
+                <h3 class="filter-title">Customer Rating</h3>
+                <div class="rating-option">
+                    <input type="radio" name="rating" id="rating5">
+                    <label for="rating5">
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </label>
+                    <span class="rating-text">5.0</span>
+                </div>
+                <div class="rating-option">
+                    <input type="radio" name="rating" id="rating4" checked>
+                    <label for="rating4">
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                    </label>
+                    <span class="rating-text">4.0 & up</span>
+                </div>
+                <div class="rating-option">
+                    <input type="radio" name="rating" id="rating3">
+                    <label for="rating3">
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                    </label>
+                    <span class="rating-text">3.0 & up</span>
+                </div>
+            </div>
+
+            <!-- Availability -->
+            <div class="filter-card">
+                <h3 class="filter-title">Availability</h3>
+                <div class="filter-option">
+                    <input type="checkbox" id="inStock" checked>
+                    <label for="inStock">In Stock</label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="freeShipping">
+                    <label for="freeShipping">Free Shipping</label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="onSale">
+                    <label for="onSale">On Sale</label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="results-header">
+                <span class="results-count">Showing <strong>1-12</strong> of <strong>156</strong> products</span>
+                <div class="sort-dropdown">
+                    <label for="sortSelect">Sort by:</label>
+                    <select id="sortSelect" class="sort-select">
+                        <option>Popularity</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Newest Arrivals</option>
+                        <option>Customer Rating</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <span class="discount-badge">-25%</span>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop"
+                            alt="Wireless Headphones" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Premium Wireless Bluetooth Headphones with Noise Cancelling</h3>
+                        <div class="product-price">
+                            <span class="current-price">$149.99</span>
+                            <span class="original-price">$199.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="review-count">(2,456)</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Premium Wireless Headphones', 149.99)">Add
+                            to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <span class="discount-badge">-40%</span>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop"
+                            alt="Smart Watch" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Smart Watch with Heart Rate Monitor & GPS Tracking</h3>
+                        <div class="product-price">
+                            <span class="current-price">$119.99</span>
+                            <span class="original-price">$199.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                            <span class="review-count">(1,832)</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Smart Watch', 119.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <span class="discount-badge">-15%</span>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop"
+                            alt="Running Shoes" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Ultra Lightweight Running Shoes - Breathable Mesh</h3>
+                        <div class="product-price">
+                            <span class="current-price">$84.99</span>
+                            <span class="original-price">$99.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="review-count">(3,214)</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Running Shoes', 84.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <span class="discount-badge">-30%</span>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=400&h=400&fit=crop"
+                            alt="Skincare Set" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Complete Skincare Set - Moisturizer, Serum & Cleanser</h3>
+                        <div class="product-price">
+                            <span class="current-price">$69.99</span>
+                            <span class="original-price">$99.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                            <span class="review-count">(987)</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Skincare Set', 69.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <span class="discount-badge">-20%</span>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?w=400&h=400&fit=crop"
+                            alt="Leather Bag" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Premium Leather Crossbody Bag - Handcrafted</h3>
+                        <div class="product-price">
+                            <span class="current-price">$159.99</span>
+                            <span class="original-price">$199.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="review-count">(654)</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Leather Bag', 159.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <span class="discount-badge">-35%</span>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&h=400&fit=crop"
+                            alt="Smart Speaker" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Smart Speaker with Voice Assistant & 360° Sound</h3>
+                        <div class="product-price">
+                            <span class="current-price">$64.99</span>
+                            <span class="original-price">$99.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                            <span class="review-count">(2,108)</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Smart Speaker', 64.99)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <span class="discount-badge">-50%</span>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop"
+                            alt="Sunglasses" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Designer Polarized Sunglasses - UV400 Protection</h3>
+                        <div class="product-price">
+                            <span class="current-price">$49.99</span>
+                            <span class="original-price">$99.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="review-count">(1,456)</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Designer Sunglasses', 49.99)">Add to
+                            Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <span class="discount-badge">-18%</span>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400&h=400&fit=crop"
+                            alt="Camera" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Instant Print Camera with Built-in Flash & Selfie Mode</h3>
+                        <div class="product-price">
+                            <span class="current-price">$89.99</span>
+                            <span class="original-price">$109.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                            <span class="review-count">(892)</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Instant Camera', 89.99)">Add to
+                            Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <span class="discount-badge">-22%</span>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop"
+                            alt="Backpack" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Travel Laptop Backpack - Waterproof & Anti-Theft</h3>
+                        <div class="product-price">
+                            <span class="current-price">$54.99</span>
+                            <span class="original-price">$69.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="review-count">(3,765)</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Travel Backpack', 54.99)">Add to
+                            Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="product-card">
+                    <span class="discount-badge">-28%</span>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=400&fit=crop"
+                            alt="Headphones" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Over-Ear Studio Headphones - Professional Grade</h3>
+                        <div class="product-price">
+                            <span class="current-price">$179.99</span>
+                            <span class="original-price">$249.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="review-count">(1,234)</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Studio Headphones', 179.99)">Add to
+                            Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="product-card">
+                    <span class="discount-badge">-33%</span>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=400&fit=crop"
+                            alt="Laptop" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Ultra-Thin Laptop 14" - 16GB RAM, 512GB SSD</h3>
+                        <div class="product-price">
+                            <span class="current-price">$799.99</span>
+                            <span class="original-price">$1,199.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                            <span class="review-count">(567)</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Ultra-Thin Laptop', 799.99)">Add to
+                            Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="product-card">
+                    <span class="discount-badge">-45%</span>
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&h=400&fit=crop"
+                            alt="Dress" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Elegant Summer Dress - Floral Print Collection</h3>
+                        <div class="product-price">
+                            <span class="current-price">$44.99</span>
+                            <span class="original-price">$79.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="review-count">(2,890)</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('Summer Dress', 44.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ShopLuxe</h3>
+                <p>Your premier destination for fashion and lifestyle products. Discover quality, style, and exceptional
+                    service.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                            <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Shop.html">Shop</a></li>
+                    <li><a href="Sell product .html">Sell Products</a></li>
+                    <li><a href="New Arrival page .html">New Arrivals</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                    <li><a href="Help.html">FAQs</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Stay Connected</h3>
+                <p>Subscribe to our newsletter for the latest updates.</p>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email" required class="footer-input">
+                    <button type="submit" class="footer-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ShopLuxe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+
+        // Sidebar Toggle for Mobile
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        }
+
+        // Category filter selection
+        document.querySelectorAll('.category-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        // Cart System - Sync with localStorage
+        let cart = JSON.parse(localStorage.getItem('shopLuxeCart')) || [];
+
+        function updateCartBadge() {
+            const badge = document.querySelector('.cart-badge');
+            if (badge) {
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                badge.textContent = totalItems;
+                badge.style.display = totalItems > 0 ? 'flex' : 'none';
+            }
+        }
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            localStorage.setItem('shopLuxeCart', JSON.stringify(cart));
+            updateCartBadge();
+
+            // Visual feedback
+            const btn = event.target;
+            const originalText = btn.textContent;
+            btn.textContent = '✓ Added!';
+            btn.style.background = '#22c55e';
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+            }, 1500);
+        }
+
+        // Initialize cart badge on page load
+        updateCartBadge();
+    </script>
+</body>
+
+</html>
