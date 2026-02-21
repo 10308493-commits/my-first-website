@@ -1,63 +1,175 @@
-/* Mobile Media Queries */
-
-/* Navbar */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-    .navbar a {
-        padding: 10px;
-        width: 100%; /* Full width for touch target */
-    }
+.navbar {
+  /* Mobile styles for navbar */
 }
 
-/* Hero Section */
 @media (max-width: 768px) {
-    .hero {
-        padding: 20px;
-        text-align: center;
-        background-size: cover;
-    }
-    .hero h1 {
-        font-size: 1.5rem;
-        line-height: 1.2;
-    }
+  .navbar {
+    /* Styles specific for 768px and below */
+  }
 }
 
-/* Search Container */
-@media (max-width: 768px) {
-    .search-container {
-        width: 90%;
-        margin: 0 auto; /* Center it */
-    }
-    .search-container input {
-        width: 100%; /* Full width */
-        padding: 10px;
-    }
+@media (max-width: 600px) {
+  .navbar {
+    /* Styles specific for 600px and below */
+  }
 }
 
-/* Footer */
-@media (max-width: 768px) {
-    .footer {
-        padding: 20px;
-        text-align: center;
-        display: block;
-    }
-    .footer a {
-        display: block; /* Stack links */
-        margin: 10px 0;
-    }
+@media (max-width: 480px) {
+  .navbar {
+    /* Styles specific for 480px and below */
+  }
 }
 
-/* Modals */
+.hero {
+  /* Mobile styles for hero section */
+}
+
 @media (max-width: 768px) {
-    .modal {
-        width: 90%;
-        max-width: 600px; /* Limit modal width */
-        margin: 10% auto; /* Center it */
-    }
-    .modal-content {
-        padding: 20px;
-    }
+  .hero {
+    /* Styles specific for 768px and below */
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    /* Styles specific for 600px and below */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    /* Styles specific for 480px and below */
+  }
+}
+
+.search {
+  /* Mobile styles for search bar */
+}
+
+@media (max-width: 768px) {
+  .search {
+    /* Styles specific for 768px and below */
+  }
+}
+
+@media (max-width: 600px) {
+  .search {
+    /* Styles specific for 600px and below */
+  }
+}
+
+@media (max-width: 480px) {
+  .search {
+    /* Styles specific for 480px and below */
+  }
+}
+
+.footer {
+  /* Mobile styles for footer */
+}
+
+@media (max-width: 768px) {
+  .footer {
+    /* Styles specific for 768px and below */
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    /* Styles specific for 600px and below */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    /* Styles specific for 480px and below */
+  }
+}
+
+.modal {
+  /* Mobile styles for modals */
+}
+
+@media (max-width: 768px) {
+  .modal {
+    /* Styles specific for 768px and below */
+  }
+}
+
+@media (max-width: 600px) {
+  .modal {
+    /* Styles specific for 600px and below */
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    /* Styles specific for 480px and below */
+  }
+}
+
+.form {
+  /* Mobile styles for forms */
+}
+
+@media (max-width: 768px) {
+  .form {
+    /* Styles specific for 768px and below */
+  }
+}
+
+@media (max-width: 600px) {
+  .form {
+    /* Styles specific for 600px and below */
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    /* Styles specific for 480px and below */
+  }
+}
+
+.card {
+  /* Mobile styles for cards */
+}
+
+@media (max-width: 768px) {
+  .card {
+    /* Styles specific for 768px and below */
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    /* Styles specific for 600px and below */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    /* Styles specific for 480px and below */
+  }
+}
+
+.grid {
+  /* Mobile styles for grid */
+}
+
+@media (max-width: 768px) {
+  .grid {
+    /* Styles specific for 768px and below */
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    /* Styles specific for 600px and below */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    /* Styles specific for 480px and below */
+  }
 }
